@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.youtube_clone.CustomMotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/playerMotionLayout"
+    app:layoutDescription="@xml/fragment_player_scene">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainContainerLayout"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:background="#F2FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/bottomPlayerControlButton"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="24dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@id/mainContainerLayout"
+        app:layout_constraintEnd_toEndOf="@id/mainContainerLayout"
+        app:layout_constraintTop_toTopOf="@+id/mainContainerLayout" />
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/playerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:resize_mode="fill"
+        app:layout_constraintBottom_toBottomOf="@id/mainContainerLayout"
+        app:layout_constraintStart_toStartOf="@id/mainContainerLayout"
+        app:layout_constraintTop_toTopOf="@id/mainContainerLayout" />
+
+    <TextView
+        android:id="@+id/bottomTitleTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:text="재생 중인 동영상이 없습니다."
+        android:textColor="@color/black"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:singleLine="true"
+        app:layout_constraintBottom_toBottomOf="@id/bottomPlayerControlButton"
+        app:layout_constraintEnd_toStartOf="@id/bottomPlayerControlButton"
+        app:layout_constraintStart_toEndOf="@id/playerView"
+        app:layout_constraintTop_toTopOf="@id/bottomPlayerControlButton" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fragmentRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:nestedScrollingEnabled="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mainContainerLayout" />
+
+</com.example.youtube_clone.CustomMotionLayout>
