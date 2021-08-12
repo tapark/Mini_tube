@@ -37,7 +37,7 @@
     <TextView
         android:id="@+id/bottomTitleTextView"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="12dp"
         android:text="재생 중인 동영상이 없습니다."

@@ -34,6 +34,10 @@ class PlayerFragment: Fragment(R.layout.fragment_player) {
         val fragmentPlayerBinding = FragmentPlayerBinding.bind(view)
         binding = fragmentPlayerBinding
 
+        fragmentPlayerBinding.bottomTitleTextView.setOnClickListener {
+            fragmentPlayerBinding.playerMotionLayout.transitionToEnd()
+        }
+
         initMotionLayoutEvent(fragmentPlayerBinding)
 
         initRecyclerView(fragmentPlayerBinding)
@@ -64,7 +68,7 @@ class PlayerFragment: Fragment(R.layout.fragment_player) {
             player = SimpleExoPlayer.Builder(it).build()
         }
         binding?.let {
-            fragmentPlayerBinding.playerView.player = player
+            binding.playerView.player = player
             player?.addListener(object: Player.Listener {
                 override fun onIsPlayingChanged(isPlaying: Boolean) {
                     super.onIsPlayingChanged(isPlaying)

@@ -6,6 +6,7 @@
         motion:constraintSetEnd="@+id/end"
         motion:constraintSetStart="@id/start"
         motion:duration="300">
+
         <KeyFrameSet>
             <KeyAttribute
                 motion:motionTarget="@+id/bottomTitleTextView"
@@ -22,9 +23,11 @@
                 motion:percentX="1"
                 motion:percentWidth="1"/>
         </KeyFrameSet>
+
         <OnSwipe
             motion:touchAnchorId="@+id/mainContainerLayout"
             motion:touchAnchorSide="bottom" />
+
     </Transition>
 
     <ConstraintSet android:id="@+id/start">
